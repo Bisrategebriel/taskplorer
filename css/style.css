@@ -106,6 +106,7 @@ body {
 .task-list-card {
   width: 80%; 
   margin: 0 auto;
+  overflow: auto;
 }
 #filter {
   width: 360px;
@@ -128,3 +129,64 @@ body {
   justify-content: flex-end;
 }
 
+.ascend, .descend {
+  margin-right: .5rem;
+}
+
+.clear-and-refresh {
+  padding: 0 1rem;
+  margin: 0 .5rem;
+  display: flex;
+  align-items: center;
+  background: #FADA53;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #202334;
+}
+
+.collections {
+  list-style: none;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-top: 10px;
+  width: 100%;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #aaa;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #6A6C77;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6A6C77aa;
+}
+
+.collection-list{
+  background: #FADA53aa;
+  border-radius: 4px;
+  padding: 0.8rem;
+  box-shadow: 1px 1px 2px #6A6C77;
+  margin-top: 1rem;
+  margin-right: 10px;
+}
+
+.trashed {
+  float: right;
+  margin-right: 1rem;
+  color: black;
+  cursor: pointer;
+}
+
+.trashed:hover {
+  color: red;
+}
