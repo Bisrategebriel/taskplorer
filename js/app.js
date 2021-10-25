@@ -38,28 +38,68 @@ function sortAscending() {
     tasks = [];
   } else {
     tasks = JSON.parse(localStorage.getItem("tasks"));
-    tasks.sort();
-    // sortedTasks = tasks.sort();
 
-    // const itemList = document.createElement("li");
-    // itemList.className = "collection-list";
+    sortedTasks = tasks.sort();
 
-    // itemList.appendChild(document.createTextNode(sortedTasks));
+    clearFromLocalStorage();
 
-    // const link = document.createElement("a");
-    // link.className = "trashed";
+    window.location.reload(true);
 
-    // link.innerHTML = `<i class="fas fa-trash-alt"></i>`;
+    sortedTasks.forEach((task) => {
+      const itemList = document.createElement("li");
+      itemList.className = "collection-list";
 
-    // itemList.appendChild(link);
+      itemList.appendChild(document.createTextNode(task));
 
-    // taskList.appendChild(itemList);
+      const link = document.createElement("a");
+      link.className = "trashed";
 
-    // storeToLocalStorage(sortedTasks);
+      link.innerHTML = `<i class="fas fa-trash-alt"></i>`;
+
+      itemList.appendChild(link);
+
+      taskList.appendChild(itemList);
+
+      storeToLocalStorage(task);
+    });
+    // alert(tasks.sort());
   }
 }
 
-function sortDesceding() {}
+function sortDesceding() {
+  let tasks;
+  let sortedTasks;
+  if (localStorage.getItem("tasks") === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+
+    sortedTasks = tasks.reverse();
+
+    clearFromLocalStorage();
+
+    window.location.reload(true);
+
+    sortedTasks.forEach((task) => {
+      const itemList = document.createElement("li");
+      itemList.className = "collection-list";
+
+      itemList.appendChild(document.createTextNode(task));
+
+      const link = document.createElement("a");
+      link.className = "trashed";
+
+      link.innerHTML = `<i class="fas fa-trash-alt"></i>`;
+
+      itemList.appendChild(link);
+
+      taskList.appendChild(itemList);
+
+      storeToLocalStorage(task);
+    });
+    // alert(tasks.sort());
+  }
+}
 
 function getTask() {
   let tasks;
